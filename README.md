@@ -1,2 +1,0 @@
-# annisafarida.github.io
-ppids
