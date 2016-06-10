@@ -11,7 +11,7 @@
 // koordinate dalam latitude, longitude dan 13 adalah zoom
 //koordinat lihat digeoplaner
 // tilelayer bisa diisi dengan openstreetmap 
-var mymap = L.map('mapid').setView([35.70950, 139.73202], 13);
+var mymap = L.map('mapid').setView([35.70950, 139.73202], 10);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18
@@ -25,7 +25,28 @@ var marker = L.marker([35.29993, 139.48088]).addTo(mymap);
 marker.bindPopup("<b>Halo!Saya di Enoshima</b>").openPopup();
 
 var marker = L.marker([35.31923, 139.54669]).addTo(mymap);
-marker.bindPopup("<b>Halo!Saya di Kamakura</b>").openPopup();
+marker.bindPopup("<b>Halo!Saya di Kamakura Shrine</b>").openPopup();
+
+var marker = L.marker([35.33386, 139.40472]).addTo(mymap);
+marker.bindPopup("<b>Halo!Saya di Chigasaki</b>").openPopup();
+
+var marker = L.marker([35.71188, 139.79670]).addTo(mymap);
+marker.bindPopup("<b>Halo!Saya di Asakusa Shrine</b>").openPopup();
+
+var marker = L.marker([35.71498, 139.77330]).addTo(mymap);
+marker.bindPopup("<b>Halo!Saya di Ueno Park</b>").openPopup();
+
+var marker = L.marker([35.70207, 139.77533]).addTo(mymap);
+marker.bindPopup("<b>Halo!Saya di Akihabara</b>").openPopup();
+
+var marker = L.marker([35.65814, 139.70193]).addTo(mymap);
+marker.bindPopup("<b>Halo!Saya di Shibuya</b>").openPopup();
+
+var marker = L.marker([35.43940, 139.65505]).addTo(mymap);
+marker.bindPopup("<b>Halo!Saya di Yokohama</b>").openPopup();
+
+var marker = L.marker([35.25095, 139.15351]).addTo(mymap);
+marker.bindPopup("<b>Halo!Saya di Odawara Castle</b>").openPopup();
 </script>
 </body>
 </html>
