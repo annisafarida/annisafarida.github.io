@@ -6,12 +6,12 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<link rel="stylesheet" href="leafletsntt.css" />
 
 	<style>
 		#map {
-			width: 800px;
-			height: 500px;
+			width: 900px;
+			height: 600px;
 		}
 
 		.info {
@@ -44,9 +44,9 @@
 <body>
 	<div id="map"></div>
 
-	<script src="https://github.com/annisafarida/annisafarida.github.io/blob/master/leafletsntt.js"></script>
+	<script src="leaflet.js"></script>
 
-	<script type="text/javascript" src="https://github.com/annisafarida/annisafarida.github.io/blob/master/jogja.js"></script>
+	<script type="text/javascript" src="jogja.js"></script>
 	<script type="text/javascript">
 
 		var map = L.map('map').setView([-7.79558, 110.36949], 10);
@@ -71,8 +71,9 @@
 
 		info.update = function (props) {
 			this._div.innerHTML = '<h4>Visualisasi Kesiapan IDS di DI Yogyakarta</h4>' +  (props ?
-				'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-				: '');
+				'<b>' + props.name + '</b><br />' + props.density + '%'
+				: 'Arahkan kursor ke kota/kabupaten')
+				
 		};
 
 		info.addTo(map);
@@ -80,14 +81,10 @@
 
 		// get color depending on population density value
 		function getColor(d) {
-			return d > 1000 ? '#800026' :
-			       d > 500  ? '#BD0026' :
-			       d > 200  ? '#E31A1C' :
-			       d > 100  ? '#FC4E2A' :
-			       d > 50   ? '#FD8D3C' :
-			       d > 20   ? '#FEB24C' :
-			       d > 10   ? '#FED976' :
-			                  '#FFEDA0';
+			return d > 75 ? '#254432' :
+			       d > 50  ? '#476a4c' :
+			       d > 25  ? '#44945e' :
+			                  '#8fc693';
 		}
 
 		function style(feature) {
@@ -150,7 +147,7 @@
 		legend.onAdd = function (map) {
 
 			var div = L.DomUtil.create('div', 'info legend'),
-				grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+				grades = [0, 25, 50, 75],
 				labels = [],
 				from, to;
 
